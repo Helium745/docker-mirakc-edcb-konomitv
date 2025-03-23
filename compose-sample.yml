@@ -52,6 +52,14 @@ services:
       - MIRKAC_ADDRESS=mirakc
       - MIRKAC_PORT=40772
       # - UMASK=002
+  
+  konomitv:
+    extends:
+      file: ./konomitv/docker-compose.yaml
+      service: konomitv
+    depends_on:
+      - mirakc
+      - edcb
 
 volumes:
   mirakc-epg:
